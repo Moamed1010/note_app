@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:note_app/Views/widgets/note_viwe_body.dart';
 
 class NoteView extends StatelessWidget {
   const NoteView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold ();
+    return SafeArea(child: NoteViweBody());
   }
 }
