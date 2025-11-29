@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:note_app/Constant.dart';
 
 class CussomTextField extends StatelessWidget {
-  const CussomTextField({super.key});
-
+  const CussomTextField({super.key, required this.hint,  this.maxline=1});
+  
+  final String hint;
+  final int maxline; 
   @override
   Widget build(BuildContext context) {
     return TextField(
       cursorColor: KPrimaryColor,
+      maxLines: maxline,
       decoration: InputDecoration(
-        hintText: 'Title',
+        hintText: hint,
         hintStyle:const  TextStyle(
           color: KPrimaryColor
         ),
