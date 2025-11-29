@@ -10,13 +10,18 @@ class NoteView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(child: NoteViweBody()),
       floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadiusGeometry.circular(24),
+        ),
         onPressed: () {
-         showModalBottomSheet(context: context, builder: (context){
-
-         return AddNoteButtonSheet();
-         });
+          showModalBottomSheet(
+            context: context,
+            builder: (context) {
+              return AddNoteButtonSheet();
+            },
+          );
         },
-        child:  Icon(Icons.add, size: 30, color: Colors.black),
+        child: Icon(Icons.add, size: 30, color: Colors.black),
         backgroundColor: Colors.cyanAccent,
       ),
     );
