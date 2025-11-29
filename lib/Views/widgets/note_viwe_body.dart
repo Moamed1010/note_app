@@ -12,7 +12,7 @@ class NoteViweBody extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 10),
-          CustomAppBar(),
+          CustomAppBar(title: "Notes",icon: Icons.search,),
           SizedBox(height: 10),
           Expanded(child: NotesListView()),
         ],
