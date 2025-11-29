@@ -14,9 +14,9 @@ class AddNoteButtonSheet extends StatelessWidget {
         child: Column(
           children: const [
             SizedBox(height: 20),
-            CussomTextField(hint: 'Title'),
+            CustomTextField(hint: 'Title'),
             SizedBox(height: 20),
-            CussomTextField(hint: 'Content', maxline: 6),
+            CustomTextField(hint: 'Content', maxline: 6),
             SizedBox(height:100),
             CustomButton(),
             SizedBox(height: 16),
