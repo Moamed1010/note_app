@@ -1,7 +1,9 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note_app/Models/note_model.dart';
 import 'package:note_app/Views/widgets/custom_botton.dart';
 import 'package:note_app/Views/widgets/custom_text_field.dart';
+import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -15,7 +17,7 @@ class AddNoteForm extends StatefulWidget {
 class _AddNoteFormState extends State<AddNoteForm> {
   final GlobalKey<FormState> formkey = GlobalKey();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
-  String? title, content;
+  String? title, subTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -31,29 +33,32 @@ class _AddNoteFormState extends State<AddNoteForm> {
               title = value;
             },
           ),
-         const SizedBox(height: 20),
+          const SizedBox(height: 20),
           CustomTextField(
             hint: 'Content',
             maxline: 6,
             onSaved: (value) {
-              content = value;
+              subTitle = value;
             },
           ),
-        const  SizedBox(height: 100),
+          const SizedBox(height: 100),
           CustomButton(
-            onTap: (){
-              if(formkey.currentState!.validate()){
+            onTap: () {
+              if (formkey.currentState!.validate()) {
                 formkey.currentState!.save();
-              }
-              else{
-                autovalidateMode=AutovalidateMode.always;
-                setState(() {
-                  
-                });
+                var noteModel = NoteModel(
+                    title: title!,
+                    subTitle: subTitle!,
+                    date: DateTime.now().toString(),
+                    color: Colors.blueAccent.value);
+                    BlocProvider.of<AddNoteCubit>(context).addNote(noteModel);
+              } else {
+                autovalidateMode = AutovalidateMode.always;
+                setState(() {});
               }
             },
           ),
-         const SizedBox(height: 16),
+          const SizedBox(height: 16),
         ],
       ),
     );
