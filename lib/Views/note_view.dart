@@ -10,11 +10,13 @@ class NoteView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(child: NoteViweBody()),
       floatingActionButton: FloatingActionButton(
+        
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(24),
         ),
         onPressed: () {
           showModalBottomSheet(
+            isScrollControlled: true,
             context: context,
             builder: (context) {
               return AddNoteButtonSheet();
