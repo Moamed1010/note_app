@@ -15,6 +15,7 @@ class CustomTextField extends StatelessWidget {
         if(value?.isEmpty??true){
           return 'Filed is required';
         }
+        return null;
       },
       cursorColor: KPrimaryColor,
       maxLines: maxline,

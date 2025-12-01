@@ -5,7 +5,6 @@ import 'package:note_app/Constant.dart';
 import 'package:note_app/Models/note_model.dart';
 import 'package:note_app/Models/note_model.g.dart';
 import 'package:note_app/Views/note_view.dart';
-import 'package:note_app/cubits/add_note_cubit/add_note_cubit.dart';
 import 'package:note_app/simple_bloc_observer.dart';
 
 void main() async{
@@ -18,7 +17,7 @@ void main() async{
 }
 
 class NoteApp extends StatelessWidget {
-  NoteApp({super.key});
+  const NoteApp({super.key});
 
   @override
   Widget build(BuildContext context) {
