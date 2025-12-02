@@ -17,7 +17,9 @@ class NoteItem extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) {
-              return const EditNoteView();
+              return EditNoteView(
+                note: note,
+              );
             },
           ),
         );
@@ -33,7 +35,7 @@ class NoteItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title:  Text(
+                title: Text(
                   note.title,
                   style: TextStyle(color: Colors.black, fontSize: 30),
                 ),
