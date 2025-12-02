@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/Constant.dart';
 import 'package:note_app/Models/note_model.dart';
-import 'package:note_app/Views/widgets/colors_list_view.dart';
-import 'package:note_app/Views/widgets/colors_list_view_item.dart';
 import 'package:note_app/Views/widgets/custom_app_bar.dart';
 import 'package:note_app/Views/widgets/custom_text_field.dart';
 import 'package:note_app/Views/widgets/edit_note_color_list_view.dart';
